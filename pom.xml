@@ -60,11 +60,11 @@
     </plugins>
   </build>
 
-  <groupId>com.davromalc</groupId>
+  <groupId>com.rijpert</groupId>
   <artifactId>cucumber-micronaut</artifactId>
-  <version>0.1.0</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
-  <name>Cucumber-JVM: Micronaut</name>
+  <name>cucumber-micronaut</name>
 
   <properties>
     <project.Automatic-Module-Name>io.cucumber.micronaut</project.Automatic-Module-Name>

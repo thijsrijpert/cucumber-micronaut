@@ -1,20 +1,5 @@
 # cucumber-micronaut
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![Pull Request][pr-shield]][pr-url]
-[![Apache License][license-shield]][license-url]
-
-
-
-<!-- PROJECT LOGO -->
-
-
-
-
-<!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
@@ -27,8 +12,6 @@
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
-* [Contact](#contact)
-
 
 
 <!-- ABOUT THE PROJECT -->
@@ -42,9 +25,6 @@ A lightweight library for using dependency injection in cucumber steps for Micro
 * [Micronaut](https://micronaut.io/index.html)
 * [Maven](https://maven.apache.org/)
 
-
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
 ### Features
@@ -54,7 +34,6 @@ A lightweight library for using dependency injection in cucumber steps for Micro
 - Bean discovery by type
 - Bean discovery by name. See micronaut @Named annotation usage.
 - Bean discovery by parameterized type
-
 
 ### Build
 
@@ -94,9 +73,9 @@ Add the maven dependency
 
 ```xml
   <dependency>
-    <groupId>com.davromalc</groupId>
+    <groupId>com.rijpert</groupId>
     <artifactId>cucumber-micronaut</artifactId>
-    <version>0.1.0</version>
+    <version>1.0.0</version>
   </dependency>
 ```
 
@@ -199,20 +178,6 @@ public class AddFriendStep {
 }
 ```
 
-_For more examples, please refer to the [Examples Repository](https://github.com/david-romero/cucumber-micronaut-examples)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/david-romero/cucumber-micronaut/issues) for a list of proposed features (and known issues).
-
-### Proposed features
-
-- Releasing with GitHun Actions
-
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -223,37 +188,10 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
-<!-- LICENSE -->
 ## License
 
 Distributed under the Apache License. See `LICENSE` for more information.
 
-
-
-<!-- CONTACT -->
-## Contact
-
-David Romero - [@davromalc](https://twitter.com/davromalc)
+Forked from:
 
 Project Link: [https://github.com/david-romero/cucumber-micronaut](https://github.com/david-romero/cucumber-micronaut)
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/david-romero/cucumber-micronaut/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/david-romero/cucumber-micronaut?style=flat-square
-[forks-url]: hhttps://github.com/david-romero/cucumber-micronaut/network/members
-[stars-shield]: https://img.shields.io/github/stars/david-romero/cucumber-micronaut?style=flat-square
-[stars-url]: https://github.com/david-romero/cucumber-micronaut/stargazers
-[issues-shield]: https://img.shields.io/github/issues/david-romero/cucumber-micronaut?style=flat-square
-[issues-url]: https://github.com/david-romero/cucumber-micronaut/issues
-[pr-shield]: https://img.shields.io/github/issues-pr/david-romero/cucumber-micronaut?style=flat-square
-[pr-url]: https://github.com/david-romero/cucumber-micronaut/pulls
-[license-shield]: https://img.shields.io/github/license/david-romero/cucumber-micronaut?style=flat-square
-[license-url]: https://github.com/david-romero/cucumber-micronaut/blob/master/LICENSE
