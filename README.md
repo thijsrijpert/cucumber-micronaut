@@ -3,18 +3,14 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Features](#features)
   * [Build](#build)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
 
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 A lightweight library for using dependency injection in cucumber steps for Micronaut based project.
