@@ -27,13 +27,13 @@ A lightweight library for using dependency injection in cucumber steps for Micro
 
 ### Build
 
-1. Clone the repo
+Clone the repo
 
 ```sh
-git@github.com:david-romero/cucumber-micronaut.git
+https://github.com/thijsrijpert/cucumber-micronaut.git
 ```
 
-2. Build the library
+Build the library
 
 ```sh
 mvn clean package
@@ -41,20 +41,18 @@ mvn clean package
 
 ### Installation
 
-1. Clone the repo
+Clone the repo
 
 ```sh
-git@github.com:david-romero/shared-payments.git
+https://github.com/thijsrijpert/cucumber-micronaut.git
 ```
 
-2. Install the library
+Install the library
 
 ```sh
 mvn clean install
 ```
 
-
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 ### Dependency
@@ -83,7 +81,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class) //Cucumber does not support JUnit 5 yet
 @CucumberOptions(
     plugin = {"pretty", "html:target/features"},
-    glue = {"com.davromalc.cucumber.micronaut.examples.acceptance"},
+    glue = {"com.example"},
     objectFactory = MicronautObjectFactory.class,
     features = "classpath:features", snippets = SnippetType.CAMELCASE)
 public class CucumberRunnerITCase {
@@ -91,86 +89,9 @@ public class CucumberRunnerITCase {
 }
 ```
 
-### Steps usage
-
-
-1. Beans definitions
-
-```java
-import javax.inject.Singleton;
-
-@Singleton
-public class World {
-  
-}
-```
-
-```java
-@Singleton
-final class AddFriend implements UseCase<AddFriendParams, User> {
-
-  private final FriendRepository friendRepository;
-
-  public AddFriend(FriendRepository friendRepository) {
-    this.friendRepository = friendRepository;
-  }
-
-  @Override
-  public Either<Validation, User> execute(AddFriendParams params) {
-     //Implementation...
-  }
-}
-```
-
-2. Step implementation
-
-```java
-package com.davromalc.cucumber.micronaut.examples.acceptance.steps;
-
-public class AddFriendStep {
-
-  private final UseCase<AddFriendParams, User> addFriend;
-
-  private final FriendRepository friendRepository;
-
-  private final World world;
-
-  public AddFriendStep(@Named("addFriend") UseCase<AddFriendParams, User> addFriend, FriendRepository friendRepository,
-      World world) {
-    this.addFriend = addFriend;
-    this.friendRepository = friendRepository;
-    this.world = world;
-  }
-
-  @Given("a new friend with name {string}")
-  public void aNewFriendWithName(String friendName) {
-    world.setFriendParams(new AddFriendParams(friendName));
-  }
-
-
-  @When("the friend is added")
-  public void theFriendIsAdded() {
-    addFriend.execute(world.getFriendParams());
-  }
-
-  @Then("the new friend {string} has been saved")
-  public void theNewFriendHasBeenSaved(String newFriendName) {
-    final Optional<String> newFriendNameFromDatabase = friendRepository.findByName(newFriendName)
-        .map(User::getName)
-        .filter(newFriendName::equals)
-        .findAny();
-    assertThat(newFriendNameFromDatabase)
-        .matches(Optional::isPresent)
-        .get()
-        .asString()
-        .isEqualTo(newFriendName);
-  }
-}
-```
-
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to be, learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
