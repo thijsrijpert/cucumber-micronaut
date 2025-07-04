@@ -103,6 +103,4 @@ Contributions are what make the open source community such an amazing place to b
 
 Distributed under the Apache License. See `LICENSE` for more information.
 
-Forked from:
-
-Project Link: [https://github.com/david-romero/cucumber-micronaut](https://github.com/david-romero/cucumber-micronaut)
+Forked from: [https://github.com/david-romero/cucumber-micronaut](https://github.com/david-romero/cucumber-micronaut)
