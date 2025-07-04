@@ -19,12 +19,6 @@
 
 A lightweight library for using dependency injection in cucumber steps for Micronaut based project.
 
-### Built With
-
-* [Java 11](https://adoptopenjdk.net/)
-* [Micronaut](https://micronaut.io/index.html)
-* [Maven](https://maven.apache.org/)
-
 ## Getting Started
 
 ### Features
