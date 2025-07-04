@@ -13,15 +13,24 @@ import java.lang.reflect.Parameter;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+/**
+ * Util class to allow micronaut to be used with cucumber
+ */
 public final class MicronautObjectFactory implements ObjectFactory {
 
     ApplicationContext applicationContext;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void start() {
         applicationContext = ApplicationContext.run("acceptance", "test");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void stop() {
         if (applicationContext != null) {
@@ -29,9 +38,15 @@ public final class MicronautObjectFactory implements ObjectFactory {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     *  @param  glueClass type of instance to be created.
+     *  @param  <T>       type of Glue class
+     *  @return           new instance of type T
+     */
     @Override
-    public <T> T getInstance(Class<T> beanType) {
-        final Constructor<T> constructor = (Constructor<T>) beanType.getConstructors()[0];
+    public <T> T getInstance(Class<T> glueClass) {
+        final Constructor<T> constructor = (Constructor<T>) glueClass.getConstructors()[0];
         final Object[] parameters = new Object[constructor.getParameterCount()];
         try {
             for (int index = 0; index < constructor.getParameters().length; index++) {
@@ -49,7 +64,7 @@ public final class MicronautObjectFactory implements ObjectFactory {
             return constructor.newInstance(parameters);
         } catch (InstantiationException | IllegalStateException | InvocationTargetException
                 | IllegalAccessException e) {
-            throw new CucumberException(String.format("Failed to instantiate %s", beanType), e);
+            throw new CucumberException(String.format("Failed to instantiate %s", glueClass), e);
         }
     }
 
@@ -73,8 +88,14 @@ public final class MicronautObjectFactory implements ObjectFactory {
         return typesClass;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @param  glueClass unused
+     * @return should always return true, should be ignored.
+     */
     @Override
-    public boolean addClass(Class<?> aClass) {
+    public boolean addClass(Class<?> glueClass) {
         return true;
     }
 
